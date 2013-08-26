@@ -1,0 +1,10 @@
+<div >
+    <div class="chat-area">
+        <div ng-repeat="msg in messages" id="{{msg.id}}">
+            <div>{{msg.sender+', '+msg.time}}</div>
+            <div>{{msg.text}}</div>
+        </div>
+    </div>
+    <input type="text" value="" placeholder="Enter the message">
+    <input type="button" value="Send">
+</div>
