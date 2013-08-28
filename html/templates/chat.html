@@ -1,10 +1,13 @@
 <div >
-    <div class="chat-area">
-        <div ng-repeat="msg in messages" id="{{msg.id}}">
-            <div>{{msg.sender+', '+msg.time}}</div>
-            <div>{{msg.text}}</div>
-        </div>
+    <ul class="chat-area">
+        <li ng-repeat="msg in messages" id="{{msg.id}}" class="msg">
+            <div class="msg-header" >{{msg.sender}}, {{msg.time | timeago}}</div>
+            <div class="msg-body" >{{msg.text}}</div>
+        </li>
+    </ul>
+    <div class="add-mesage-block">
+        <input ng-enter="addMessage(); " ng-model="inputContent" placeholder="Enter your message" id="msg-input" class="msg-input"></input>
+        <input type="button" id="send-message" value="Send" ng-click="addMessage();">
+        <div id="log"></div>
     </div>
-    <input type="text" value="" placeholder="Enter the message">
-    <input type="button" value="Send">
 </div>
