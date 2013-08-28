@@ -1,4 +1,4 @@
 SimpleChat
-==========
+-----------
 
-Node.js and Angular.js Chat
+Basic chat based on Node.js, Angular.js and Webscokets
