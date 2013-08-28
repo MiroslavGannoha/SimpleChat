@@ -16,9 +16,9 @@ io.sockets.on('connection', function (socket) {
         console.log('m', data)
         var msg = JSON.parse(data);
         // Уведомляем клиента, что его сообщение успешно дошло до сервера
-        socket.json.send({'event': 'messageSent', 'name': ID, 'text': msg.text, 'time': time, 'sender': msg.sender});
+        socket.json.send({'event': 'messageSent', 'name': ID, 'text': msg.text, 'time': msg.time, 'sender': msg.sender});
         // Отсылаем сообщение остальным участникам чата
-        socket.broadcast.json.send({'event': 'messageReceived', 'name': ID, 'text': msg.text, 'time': time, 'sender': msg.sender})
+        socket.broadcast.json.send({'event': 'messageReceived', 'name': ID, 'text': msg.text, 'time': msg.time, 'sender': msg.sender})
     });
     // При отключении клиента - уведомляем остальных
     socket.on('disconnect', function() {
